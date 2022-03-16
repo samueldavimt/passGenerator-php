@@ -1,0 +1,214 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: arial;
+}
+
+.flex {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+body{
+    background-color: #333;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.container{
+    background-color: whitesmoke;
+    position: relative;
+    width: 550px;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.container h1{
+    color: #0b4ec6;
+}
+
+.container h1 span{
+    color: #05b30ff7;
+}
+
+.container button{
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    background-color: #0b4ec6;
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.container button:hover{
+    background-color: #033fad;
+    transition: 0.2s;
+}
+
+@keyframes controls{
+    0%{
+        display: none;
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100%{
+        display: flex;
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+.controls-password{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 100%;
+    position:absolute;
+    z-index: 999;
+    max-width: 650px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    display: flex;
+    
+}
+
+.controls-hide{
+    display: none;
+    animation: controls ease 0.5s alternate-reverse forwards;
+}
+.controls-show{
+    display: flex;
+    animation: controls ease 0.5s alternate forwards;
+}
+
+.controls-password h2{
+    margin-bottom: 35px;
+}
+.controls{
+    width:100%;
+}
+.controls .container-controls{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    
+}
+.controls .input-area-number,.container-checked{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+.controls input[type="submit"]{
+    background-color: #0b4ec6;
+    color: white;
+    font-size: 17px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin: 20px auto;
+    display: block;
+}
+.input-area-number{
+    position: relative;
+    top: -5px;
+}
+input{
+    border: none;
+    outline: none;
+    margin-right: 10px;
+}
+input[type="number"]{
+    width: 60px;
+    height: 30px;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+.password{
+    background-color: #80808042;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+
+}
+
+/* CHECKBOX */
+
+.container-checked {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+.container-checked input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 22px;
+    width: 22px;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 1px solid #48464612;
+}
+
+.container-checked:hover input ~ .checkmark {
+    background-color: #ccc;
+
+}
+
+.container-checked input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container-checked input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.container-checked .checkmark:after {
+    left: 6px;
+    top: 2.5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
