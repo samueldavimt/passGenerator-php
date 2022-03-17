@@ -119,6 +119,11 @@ body{
     border-radius: 20px;
     margin: 20px auto;
     display: block;
+    cursor: pointer;
+}
+.controls input[type="submit"]:hover{
+    transition: 0.2s;
+    background-color: #083fa5;
 }
 .input-area-number{
     position: relative;
@@ -233,4 +238,33 @@ input[type="number"]{
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
+
+@media (max-width:600px){
+
+    .container{
+        width: 100%;
+    }
+    .input-area-number,.container-checked{
+        flex-direction: column !important;
+        margin: 0px 5px;
+    }
+
+    .input-area-number input{
+        margin-top: 10px;
+        text-align: center;
+        flex: 2 1 0;
+    }
+    .container-checked {
+        flex: 1 1 0;
+    }
+
+    .controls .container-controls{
+        justify-content: space-between;
+    }
+
+    .container-checked{
+        padding-left: 25px;
+        text-align: center;
+    }
 }

@@ -1,7 +1,6 @@
 <?php
     require_once('handlePass.php');
-
-    
+ 
     if(count($_GET) > 0){
         $hidePassword = "visible"; // none
         $hideControls = ''; // controls-hide
@@ -30,12 +29,13 @@
     }
 
 ?>
+
 <!DOCTYPE html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Password Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="flex">
@@ -74,13 +74,10 @@
 
             <div style="visibility:<?=$hidePassword?>;" class="password flex">
                 <span class="new-password"><?php print_r($password)?></span>
-                <button class="click" >Copy</button>
+                <button class="click">Copy</button>
             </div>
 
         </div>
-
-
-
     <script src="script.js"></script>
 </body>
 </html>

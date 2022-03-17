@@ -29,7 +29,7 @@
                 $pass .= $words[$rand];
             }
 
-            return $pass . " Lenght: ". strlen($pass);
+            return $pass;
             
             
         }
