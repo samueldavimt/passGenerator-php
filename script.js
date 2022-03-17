@@ -9,3 +9,12 @@ document.querySelector('.apresentation button').addEventListener('click',functio
     }
 
 });
+
+// Copy clipboard
+document.querySelector('.password button').addEventListener('click',clickCopy)
+
+function clickCopy(){
+    let text = document.querySelector('.password span');
+    navigator.clipboard.writeText(text.innerHTML);
+
+}

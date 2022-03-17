@@ -146,9 +146,26 @@ input[type="number"]{
     font-size: 18px;
     margin-top: 20px;
     word-break: break-all;
+    position: relative;
     
 
 }
+.password button{
+    position: absolute;
+    top: 6px;
+    right: 5px;
+    border: none;
+    padding: 5px 8px ;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.password button:hover{
+    background-color: whitesmoke;
+    transition: 0.1s;
+}
+
 .password span{
     word-break: break-all;
 }

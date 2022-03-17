@@ -7,8 +7,8 @@
         public function simpleShuffle($args){
             $simple = 'abcdefghijklmopkrstuvwxyz12345678910';
             $lowerUpper = 'ABCDEFGHIJKLMOPQRSTUVWXYZ' . $simple;
-            $lowerEspecial = '!@$%)#(&*(<>:/' . $simple;
-            $lowerUpperEspecial = '!@$%)#(&(<>:/' . $lowerUpper;
+            $lowerEspecial = '!@$%#_.&*' . $simple;
+            $lowerUpperEspecial = '!@$%#_.&*' . $lowerUpper;
 
             $words = '';
             $pass = '';

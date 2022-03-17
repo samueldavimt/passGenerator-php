@@ -3,7 +3,7 @@
 
     
     if(count($_GET) > 0){
-        $hidePassword = "block"; // none
+        $hidePassword = "visible"; // none
         $hideControls = ''; // controls-hide
         $lenghtDefault = $_GET['lenght_password'];
 
@@ -21,7 +21,7 @@
         $password = $generatePass->handlePass($_GET);
 
     }else{
-        $hidePassword = "none"; //block
+        $hidePassword = "hidden"; //block
         $hideControls = 'controls-hide'; // vazio
         $password = '';
         $lenghtDefault = '12';
@@ -72,8 +72,9 @@
                 <input type="submit" value="Gerar Senha">
             </form>
 
-            <div style="display:<?=$hidePassword?>;" class="password flex">
+            <div style="visibility:<?=$hidePassword?>;" class="password flex">
                 <span class="new-password"><?php print_r($password)?></span>
+                <button class="click" >Copy</button>
             </div>
 
         </div>
