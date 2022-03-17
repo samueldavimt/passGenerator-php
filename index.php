@@ -1,10 +1,18 @@
 <?php
+    require_once('handlePass.php');
 
-    $hidePassword = "block"; //block
-    $hideControls = ''; // controls-hide
-    $password = '';
+    
     if(count($_GET) > 0){
-        $password =  "yes";
+        $hidePassword = "block"; // none
+        $hideControls = ''; // controls-hide
+        $lenghtDefault = $_GET['lenght_password'];
+        $password = $generatePass->handlePass($_GET);
+
+    }else{
+        $hidePassword = "none"; //block
+        $hideControls = 'controls-hide'; // vazio
+        $password = '';
+        $lenghtDefault = '12';
     }
 
 ?>
@@ -32,7 +40,7 @@
                 <div class="container-controls">
                     <div class="input-area-number">
                         <span>Tamanho Mínimo</span>
-                        <input type="number" name="length_password" id="" value="12">
+                        <input type="number" required name="lenght_password" id="" value="<?=$lenghtDefault?>" placeholder="12">
                     </div>
 
                     <label class="container-checked">
@@ -50,8 +58,8 @@
                 <input type="submit" value="Gerar Senha">
             </form>
 
-            <div style="display:<?=$hidePassword?>;" class="password">
-                <span class="new-password"><?=$password?></span>
+            <div style="display:<?=$hidePassword?>;" class="password flex">
+                <span class="new-password"><?php print_r($password)?></span>
             </div>
 
         </div>

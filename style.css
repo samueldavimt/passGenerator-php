@@ -145,7 +145,12 @@ input[type="number"]{
     text-align: center;
     font-size: 18px;
     margin-top: 20px;
+    word-break: break-all;
+    
 
+}
+.password span{
+    word-break: break-all;
 }
 
 /* CHECKBOX */
