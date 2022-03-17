@@ -4,7 +4,7 @@
 
         protected $password = '';
 
-        public function simpleSuffle($args){
+        public function simpleShuffle($args){
             $simple = 'abcdefghijklmopkrstuvwxyz12345678910';
             $lowerUpper = 'ABCDEFGHIJKLMOPQRSTUVWXYZ' . $simple;
             $lowerEspecial = '!@$%)#(&*(<>:/' . $simple;
@@ -34,7 +34,7 @@
             
         }
         public function handlePass($args){
-            $password = $this->simpleSuffle($args);
+            $password = $this->simpleShuffle($args);
             return $password;           
         }
     }
