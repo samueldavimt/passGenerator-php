@@ -5,12 +5,12 @@
         protected $password = '';
 
         public function simpleSuffle($args){
-            $letters = 'abcdefghijklmopkrstuvwxyz';
-            $lowerUpper = 'ABCDEFGHIJKLMOPQRSTUVWXYZ' . $letters;
-            $lowerEspecial = '!@$%&)(*#*(@&**@(<>:/' . $letters;
-            $lowerUpperEspecial = '!@$%&)(*#*(@&**@(<>:/' . $lowerUpper;
+            $simple = 'abcdefghijklmopkrstuvwxyz12345678910';
+            $lowerUpper = 'ABCDEFGHIJKLMOPQRSTUVWXYZ' . $simple;
+            $lowerEspecial = '!@$%)#(&*(<>:/' . $simple;
+            $lowerUpperEspecial = '!@$%)#(&(<>:/' . $lowerUpper;
 
-            $words;
+            $words = '';
             $pass = '';
             $max = $args['lenght_password'];
 
@@ -21,15 +21,15 @@
             }elseif(isset($args['especial_caracteres'])){
                 $words = $lowerEspecial;
             }else{
-                $words = $letters;
+                $words = $simple;
             }
 
             for ($c=0;$c<$max;$c++){
-                $rand = mt_rand(0,(strlen($words) - 1));
+                $rand = rand(0,(strlen($words) - 1));
                 $pass .= $words[$rand];
             }
 
-            return $pass;
+            return $pass . " Lenght: ". strlen($pass);
             
             
         }

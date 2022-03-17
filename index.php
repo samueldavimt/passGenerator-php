@@ -6,6 +6,18 @@
         $hidePassword = "block"; // none
         $hideControls = ''; // controls-hide
         $lenghtDefault = $_GET['lenght_password'];
+
+        if(isset($_GET['upper_include'])){
+            $check1 = 'checked';
+        }else{
+            $check1 = '';
+        }
+
+        if(isset($_GET['especial_caracteres'])){
+            $check2 = 'checked';
+        }else{
+            $check2 = '';
+        }
         $password = $generatePass->handlePass($_GET);
 
     }else{
@@ -13,6 +25,8 @@
         $hideControls = 'controls-hide'; // vazio
         $password = '';
         $lenghtDefault = '12';
+        $check1 = 'checked';
+        $check2 = 'checked';
     }
 
 ?>
@@ -45,13 +59,13 @@
 
                     <label class="container-checked">
                         Letras Maiúsculas
-                        <input type="checkbox" name="upper_include" id="">
+                        <input type="checkbox"   <?=$check1?>  name="upper_include" id="">
                         <span class="checkmark"></span>
                     </label>
 
                     <label class="container-checked">
                         Caractéres Especiais
-                        <input type="checkbox" checked name="especial_caracteres" id="" >
+                        <input type="checkbox" <?=$check2?> name="especial_caracteres" id="" >
                         <span class="checkmark"></span>
                     </label>
                 </div>
